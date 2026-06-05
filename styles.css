@@ -1,217 +1,241 @@
-/* General Styles */
-* {
+/* Fonts */
+@font-face {
+    font-family: 'TAY Dreamboat';
+    src: url('assets/fonts/TAYDreamboat-Regular.woff2') format('woff2'),
+         url('assets/fonts/TAYDreamboat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Wingman';
+    src: url('assets/fonts/TAYWingmanRegular.woff2') format('woff2'),
+         url('assets/fonts/TAYWingmanRegular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Medivale';
+    src: url('assets/fonts/Medivale.otf') format('opentype');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Birdie';
+    src: url('assets/fonts/TAYBirdieRegular.woff2') format('woff2'),
+         url('assets/fonts/TAYBirdieRegular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* Brand tokens */
+:root {
+    --color-black:  #292726;
+    --color-green:  #535838;
+    --color-lime:   #CEE55B;
+    --color-cream:  #FEF7E9;
+    --color-orange: #CA5028;
+
+    --font-display: 'TAY Dreamboat', sans-serif;
+    --font-body:    'DM Mono', monospace;
+    --font-accent:  'Medivale', serif;
+    --font-mono:    'DM Mono', monospace;
+}
+
+/* Reset */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
-    color: #f9f7f4;
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-black);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Coming Soon Page */
+/* Layout */
 .coming-soon-container {
     text-align: center;
-    padding: 40px 20px;
-    max-width: 600px;
-    position: relative;
+    padding: 60px 24px;
+    max-width: 580px;
+    width: 100%;
 }
 
 .coming-soon-content {
-    animation: fadeIn 0.8s ease-in;
+    animation: fadeUp 0.9s ease both;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-.logo-large {
-    font-size: 4rem;
-    color: #d4a574;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+/* Seal mark */
+.seal-mark {
+    width: 64px;
+    height: auto;
+    margin-bottom: 28px;
+    opacity: 0.85;
 }
 
-.tagline {
-    font-size: 1.3rem;
-    color: #d4a574;
-    margin-bottom: 2rem;
-    font-style: italic;
+/* Script logo */
+.logo-svg {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
+/* Sub-brand */
+.sub-brand {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin-top: 10px;
+}
+
+/* Divider */
+.divider {
+    width: 48px;
+    height: 2px;
+    background-color: var(--color-lime);
+    margin: 32px auto;
+}
+
+/* Message */
 .coming-soon-message {
-    margin: 2rem 0;
+    margin-bottom: 36px;
 }
 
-.coming-soon-message h2 {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 1rem;
+.accent-label {
+    font-family: var(--font-accent);
+    font-size: 2.2rem;
+    color: var(--color-orange);
+    margin-bottom: 14px;
 }
 
-.coming-soon-message p {
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.6;
+.body-copy {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-black);
+    line-height: 1.7;
+    opacity: 0.75;
 }
 
-/* Email Signup */
+/* Email signup */
 .email-signup {
-    margin: 2.5rem 0;
+    margin-bottom: 36px;
 }
 
 .email-signup form {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    border: 1.5px solid var(--color-green);
 }
 
 .email-signup input {
     flex: 1;
-    padding: 14px 16px;
-    border: 2px solid #d4a574;
-    border-radius: 5px;
-    background-color: rgba(249, 247, 244, 0.1);
-    color: white;
-    font-size: 1rem;
-    transition: all 0.3s;
+    padding: 14px 18px;
+    border: none;
+    background-color: transparent;
+    color: var(--color-black);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    min-width: 0;
 }
 
 .email-signup input::placeholder {
-    color: #999;
-}
-
-.email-signup input:focus {
-    outline: none;
-    background-color: rgba(249, 247, 244, 0.2);
-    border-color: #f9f7f4;
+    color: #9a9880;
+    letter-spacing: 0.03em;
 }
 
 .signup-btn {
-    padding: 14px 30px;
-    background-color: #d4a574;
-    color: #2c1810;
+    padding: 14px 28px;
+    background-color: var(--color-green);
+    color: var(--color-cream);
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.2s ease;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .signup-btn:hover {
-    background-color: #c49464;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+    background-color: var(--color-black);
 }
 
 .signup-message {
-    font-size: 0.95rem;
-    color: #d4a574;
-    height: 20px;
-    animation: slideIn 0.3s ease;
+    font-size: 0.85rem;
+    color: var(--color-orange);
+    margin-top: 10px;
+    min-height: 20px;
+    animation: fadeIn 0.3s ease;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-/* Social Links */
-.social-links {
-    margin-top: 3rem;
-}
-
-.social-links p {
-    font-size: 0.95rem;
-    color: #999;
-    margin-bottom: 1rem;
-}
-
+/* Social links */
 .social-icons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .social-icon {
-    color: #d4a574;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-green);
     text-decoration: none;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    border: 1px solid #d4a574;
-    border-radius: 25px;
-    transition: all 0.3s;
+    padding: 7px 16px;
+    border: 1px solid var(--color-green);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .social-icon:hover {
-    background-color: #d4a574;
-    color: #2c1810;
+    background-color: var(--color-lime);
+    color: var(--color-black);
+    border-color: var(--color-lime);
 }
 
-/* Coffee Cup Animation */
-.coffee-cup {
-    font-size: 5rem;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    animation: bounce 3s infinite;
-    opacity: 0.3;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .logo-large {
-        font-size: 2.5rem;
-    }
-
-    .coming-soon-message h2 {
-        font-size: 1.8rem;
+/* Mobile */
+@media (max-width: 480px) {
+    .logo-svg {
+        max-width: 280px;
     }
 
     .email-signup form {
         flex-direction: column;
+        border: none;
+        gap: 8px;
+    }
+
+    .email-signup input {
+        border: 1.5px solid var(--color-green);
+        padding: 14px 16px;
     }
 
     .signup-btn {
-        width: 100%;
-    }
-
-    .coffee-cup {
-        font-size: 3rem;
-        top: 10px;
-        right: 10px;
-    }
-
-    .social-icons {
-        flex-wrap: wrap;
+        padding: 14px;
     }
 }
