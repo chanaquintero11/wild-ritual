@@ -1,0 +1,217 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+    color: #f9f7f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Coming Soon Page */
+.coming-soon-container {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 600px;
+    position: relative;
+}
+
+.coming-soon-content {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-large {
+    font-size: 4rem;
+    color: #d4a574;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #d4a574;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.coming-soon-message {
+    margin: 2rem 0;
+}
+
+.coming-soon-message h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.coming-soon-message p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Email Signup */
+.email-signup {
+    margin: 2.5rem 0;
+}
+
+.email-signup form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.email-signup input {
+    flex: 1;
+    padding: 14px 16px;
+    border: 2px solid #d4a574;
+    border-radius: 5px;
+    background-color: rgba(249, 247, 244, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.email-signup input::placeholder {
+    color: #999;
+}
+
+.email-signup input:focus {
+    outline: none;
+    background-color: rgba(249, 247, 244, 0.2);
+    border-color: #f9f7f4;
+}
+
+.signup-btn {
+    padding: 14px 30px;
+    background-color: #d4a574;
+    color: #2c1810;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.signup-btn:hover {
+    background-color: #c49464;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+}
+
+.signup-message {
+    font-size: 0.95rem;
+    color: #d4a574;
+    height: 20px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 3rem;
+}
+
+.social-links p {
+    font-size: 0.95rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #d4a574;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border: 1px solid #d4a574;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #d4a574;
+    color: #2c1810;
+}
+
+/* Coffee Cup Animation */
+.coffee-cup {
+    font-size: 5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    animation: bounce 3s infinite;
+    opacity: 0.3;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .logo-large {
+        font-size: 2.5rem;
+    }
+
+    .coming-soon-message h2 {
+        font-size: 1.8rem;
+    }
+
+    .email-signup form {
+        flex-direction: column;
+    }
+
+    .signup-btn {
+        width: 100%;
+    }
+
+    .coffee-cup {
+        font-size: 3rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+}
